@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuickClean Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1 class="colored-heading">Welcome to QuickClean Store</h1>
+
+  <input type="text" id="searchBar" placeholder="Search for Laundry..." onkeyup="searchProduct()" />
+
+ <div id="productResult" class="product-container">
+  <a href="product.html?name=laundry" class="product-card">
+    <img src="images/laundry.jpg" alt="Laundry" />
+    <p>Laundry</p>
+  </a>
+  <a href="product.html?name=dryclean" class="product-card">
+    <img src="images/dryclean.jpg" alt="Dry Clean" />
+    <p>Dry Clean</p>
+  </a>
+</div>
+
+
+  <!-- Carousel Section -->
+  <div class="carousel">
+    <div class="carousel-item">
+      <a href="product.html"><img src="images/laundry.jpg" alt="Laundry"></a>
+    </div>
+    <div class="carousel-item">
+      <a href="product.html"><img src="images/dryclean.jpg" alt="Dry Clean"></a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

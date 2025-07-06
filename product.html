@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Page</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .product-image {
+      width: 200px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="productTitle">Product Details</h2>
+  <img id="productImage" class="product-image" src="" alt="Product" />
+  <p id="productDescription">Loading...</p>
+
+  <a href="index.html">Go Back</a>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const productName = urlParams.get('name');
+
+    const products = {
+      laundry: {
+        title: "Laundry Service",
+        image: "images/laundry.jpg",
+        description: "Professional laundry service for your everyday clothing. Fast, clean, and affordable."
+      },
+      dryclean: {
+        title: "Dry Clean Service",
+        image: "images/dryclean.jpg",
+        description: "Expert dry cleaning service for delicate fabrics and formal wear. Quality guaranteed."
+      }
+    };
+
+    const product = products[productName];
+
+    if (product) {
+      document.getElementById("productTitle").textContent = product.title;
+      document.getElementById("productImage").src = product.image;
+      document.getElementById("productDescription").textContent = product.description;
+    } else {
+      document.getElementById("productTitle").textContent = "Product Not Found";
+      document.getElementById("productDescription").textContent = "Please go back and select a valid product.";
+    }
+  </script>
+</body>
+</html>
